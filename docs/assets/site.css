@@ -101,6 +101,13 @@ img { display: block; max-width: 100%; }
 .site-footer .footer-inner { min-height: 86px; }
 .site-footer .footer-inner > span { color: var(--muted); font: .80rem var(--mono); }
 
+.index-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 .index-main { padding-block: clamp(55px, 9vw, 125px); }
 .index-main h1 { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -.065em; }
 .index-main .lead { margin-top: 20px; color: var(--muted); font-size: 1.15rem; }
@@ -115,7 +122,11 @@ img { display: block; max-width: 100%; }
   background: #fafafa;
 }
 .project-link:hover { border-color: var(--ink); }
-.project-link img { width: 100%; height: 100%; object-fit: cover; }
+.project-photos { display: grid; align-items: center; min-width: 0; background: #fafafa; }
+.hero-mosaic { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; }
+.hero-mosaic > span { overflow: hidden; }
+.hero-mosaic .wide-view img { transform: scale(1.18); }
+.hero-mosaic img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .project-link > div { display: grid; justify-items: start; align-content: center; gap: 15px; padding: clamp(24px, 4vw, 48px); }
 .project-link h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); letter-spacing: -.04em; }
 .project-link p { color: var(--muted); }
@@ -128,7 +139,6 @@ img { display: block; max-width: 100%; }
   .top-nav { gap: 13px; }
   .top-nav a { font-size: .82rem; }
   .project-link { grid-template-columns: 1fr; }
-  .project-link img { aspect-ratio: 16 / 10; height: auto; }
 }
 @media (max-width: 365px) {
   .shell { width: calc(100% - 26px); }
