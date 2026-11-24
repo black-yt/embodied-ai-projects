@@ -122,7 +122,13 @@ img { display: block; max-width: 100%; }
   background: #fafafa;
 }
 .project-link:hover { border-color: var(--ink); }
-.project-photos { display: grid; align-items: center; min-width: 0; background: #fafafa; }
+.project-photos {
+  display: grid;
+  align-items: center;
+  min-width: 0;
+  padding: clamp(10px, 1.3vw, 16px);
+  background: #fafafa;
+}
 .hero-mosaic { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; }
 .hero-mosaic > span { overflow: hidden; }
 .hero-mosaic .wide-view img { transform: scale(1.18); }
@@ -178,7 +184,7 @@ html[lang="en"] .index-main h1 {
 
 
 .portfolio-footer { background: #fafafa; padding-block: 22px; }
-.portfolio-footer .shell { display: flex; justify-content: center; }
+.portfolio-footer .shell { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .portfolio-link {
   position: relative;
   isolation: isolate;

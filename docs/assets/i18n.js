@@ -1,7 +1,7 @@
 (() => {
   const key = 'embodied-project-language';
-  const attributes = ['aria-label', 'alt', 'content'];
-  const translations = [...document.querySelectorAll('[data-zh], [data-zh-aria-label], [data-zh-alt], [data-zh-content]')]
+  const attributes = ['aria-label', 'alt', 'content', 'href'];
+  const translations = [...document.querySelectorAll('[data-zh], [data-zh-aria-label], [data-zh-alt], [data-zh-content], [data-zh-href]')]
     .map((node) => ({
       node,
       text: node.hasAttribute('data-zh') ? [node.textContent, node.getAttribute('data-zh')] : null,
