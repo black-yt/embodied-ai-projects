@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bimanual dexterous manipulation from camera images and language, with model diagrams and robot trial footage." data-zh-content="基于多视角图像和语言指令的双臂精细操作，包含模型示意、工程经验和真机录像。">
+  <title data-zh="双臂精细操作">Bimanual Dexterous Manipulation</title>
+  <link rel="stylesheet" href="../../assets/site.css">
+  <link rel="stylesheet" href="assets/project.css">
+  <script src="../../assets/i18n.js" defer></script>
+  <script src="assets/media/clips.js" defer></script>
+  <script src="assets/demo-playback.js" defer></script>
+  <script src="assets/motion-diagrams.js" defer></script>
+  <script src="assets/diagrams.js" defer></script>
+  <script src="assets/gallery.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-zh="跳到正文">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="../../index.html"><span class="mark" aria-hidden="true"></span><span data-zh="具身智能项目">Embodied AI Projects</span></a>
+      <div class="header-tools">
+      <nav class="top-nav" aria-label="Project navigation" data-zh-aria-label="项目导航">
+        <a href="#methods" data-zh="模型">Models</a>
+        <a href="#insights" data-zh="工程经验">Engineering insights</a>
+        <a href="#recordings" data-zh="评测录像">Trial footage</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language" data-zh-aria-label="语言">
+        <button type="button" lang="en" data-language="en" aria-pressed="true">EN</button>
+        <button type="button" lang="zh-CN" data-language="zh-CN" aria-pressed="false">中文</button>
+      </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="project-title">
+      <div class="shell">
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow hero-kicker" data-zh="双臂机器人学习">BIMANUAL ROBOT LEARNING</p>
+            <h1 id="project-title"><span data-zh="双臂精细">Dexterous</span><br><span data-zh="操作">manipulation</span></h1>
+            <p class="hero-lead" data-zh="我们研究双臂机器人如何根据三路相机画面和自然语言指令，协调双臂、对准工具并完成精细动作。评测选取了细胞培养实验中的移液和吹打步骤，逐项验证独立技能。">We train a bimanual robot to align tools, coordinate both arms and execute precise actions from three camera views and natural-language instructions. We evaluate these skills on pipetting and mixing steps from cell-culture experiments, one action at a time.</p>
+            <a class="button button-primary" href="#recordings" data-zh="浏览逐轮录像">Explore the trials</a>
+          </div>
+          <figure class="hero-figure">
+            <div class="hero-mosaic">
+              <span class="wide-view"><img src="assets/media/tilted-dish-mixing/01/head.webp" width="640" height="480" alt="Dual arms and the bench from the head camera" data-zh-alt="头部相机看到的双臂与实验台" decoding="async"></span>
+              <span><img src="assets/media/tilted-dish-mixing/01/left-wrist.webp" width="640" height="480" alt="Left hand holding a pipette over a tilted dish" data-zh-alt="左手握持移液器对准斜皿" decoding="async"></span>
+              <span><img src="assets/media/tilted-dish-mixing/01/right-wrist.webp" width="640" height="480" alt="Close-up of the tip inside the tilted dish" data-zh-alt="枪尖进入斜皿的近景" decoding="async"></span>
+              <span><img src="assets/media/tube-mixing/05/right-wrist.webp" width="640" height="480" alt="Pipette aligned inside a small tube" data-zh-alt="枪尖在小试管内对准" decoding="async"></span>
+              <span><img src="assets/media/tube-to-dish-a/03/left-wrist.webp" width="640" height="480" alt="Wrist view of the fingers and pipette" data-zh-alt="腕部相机拍摄的手指与移液器" decoding="async"></span>
+              <span class="wide-view"><img src="assets/media/tube-to-dish-b/03/head.webp" width="640" height="480" alt="Dual-arm movement over a tube rack" data-zh-alt="试管架上方的双臂运动" decoding="async"></span>
+              <span><img src="assets/media/dish-to-tube/02/left-wrist.webp" width="640" height="480" alt="Pipette approaching the liquid in a dish" data-zh-alt="移液器接近皿中液面" decoding="async"></span>
+              <span><img src="assets/media/dish-to-tube/11/right-wrist.webp" width="640" height="480" alt="Dish and target tube seen from the wrist" data-zh-alt="腕部视角中的培养皿与目标试管" decoding="async"></span>
+              <span><img src="assets/media/tube-to-tube/07/right-wrist.webp" width="640" height="480" alt="Tip aligned with a tube opening" data-zh-alt="枪尖与试管口对准" decoding="async"></span>
+            </div>
+            <figcaption><span data-zh="机器人相机实拍">Robot camera footage</span><span data-zh="头部与腕部视角">Head and wrist views</span></figcaption>
+          </figure>
+        </div>
+        <dl class="metrics" aria-label="Dataset and evaluation summary" data-zh-aria-label="数据集与真机评测摘要">
+          <div><dt data-zh="示教轨迹">Demonstrations</dt><dd>3,507</dd></div>
+          <div class="metric-duration"><dt data-zh="数据总时长">Data duration</dt><dd>2,500 <span data-zh="分钟">min</span></dd></div>
+          <div><dt data-zh="成功 / 记录">Successful / recorded</dt><dd>51<span>/55</span></dd></div>
+          <div><dt data-zh="本批记录成功率">Success in this batch</dt><dd>92.7<span>%</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="methods" class="shell section" aria-labelledby="methods-title">
+      <div class="section-heading model-section-heading">
+        <h2 id="methods-title" data-zh="模型">Models</h2>
+        <button id="model-pause" class="text-button" type="button" aria-pressed="false">Pause animations</button>
+      </div>
+      <div class="strategy-grid">
+        <article class="strategy">
+          <header class="strategy-heading">
+            <h3 data-zh="世界动作模型">World Action Model</h3>
+            <button class="text-button" type="button" data-replay="flow-wam" data-zh="重播示意">Replay</button>
+          </header>
+          <div class="model-flow" id="flow-wam" data-flow aria-label="The World Action Model predicts the next visual frame and an action chunk" data-zh-aria-label="世界动作模型输出下一帧画面和动作片段">
+            <div class="model-mainline">
+              <div class="model-node model-input" data-flow-step="0">
+                <span class="time-frame" aria-hidden="true"><img src="assets/media/illustration/frame-2.webp" alt="" data-model-frame="0" width="192" height="144" loading="lazy"><span class="frame-time">t</span></span>
+                <div><strong data-zh="视觉历史">Visual history</strong><small data-zh="历史动作 · 任务条件">Past actions · task context</small></div>
+              </div>
+              <div class="model-node model-core" data-flow-step="1"><strong>WAM</strong><small data-zh="预测">Predict</small></div>
+            </div>
+            <div class="model-outputs model-outputs-pair" data-flow-step="2">
+              <div class="model-node model-result forecast-result">
+                <div><strong data-zh="下一帧画面">Next frame</strong><small data-zh="预测观测">Predicted observation</small></div>
+                <span class="time-frame forecast-frame output-visual" aria-hidden="true"><img src="assets/media/illustration/frame-3.webp" alt="" width="192" height="144" data-model-frame="1"><span class="frame-time">t+1</span></span>
+              </div>
+              <div class="model-node model-result action-result">
+                <div><strong data-zh="动作片段">Actions</strong><small data-zh="双臂协作示意">Bimanual coordination</small></div>
+                <div class="action-visual">
+                  <canvas class="action-scene" data-action-scene width="300" height="160" role="img" aria-label="Two robot arms coordinating a tool and a container" data-zh-aria-label="左臂和右臂协同操作工具与容器的动画"></canvas>
+                  <div class="action-legend"><span data-zh="左臂">Left arm</span><span data-zh="右臂">Right arm</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="flow-return" data-flow-step="3" data-zh="执行后，用相机实测画面更新历史。">After execution, refresh the history with camera observations.</div>
+          </div>
+        </article>
+        <article class="strategy">
+          <header class="strategy-heading">
+            <h3 data-zh="视觉语言动作模型">Vision Language Action Model</h3>
+            <button class="text-button" type="button" data-replay="flow-vla" data-zh="重播示意">Replay</button>
+          </header>
+          <div class="model-flow" id="flow-vla" data-flow aria-label="The Vision Language Action Model maps synchronized images and a language instruction to actions" data-zh-aria-label="视觉语言动作模型从同步图像和语言指令生成动作">
+            <div class="model-mainline">
+              <div class="model-node model-input">
+                <div class="vla-input-visual" data-flow-step="0">
+                  <div class="camera-input" aria-hidden="true"><img src="assets/media/tube-mixing/01/head.webp" alt="" width="640" height="480" loading="lazy"><img src="assets/media/tube-mixing/01/left-wrist.webp" alt="" width="640" height="480" loading="lazy"><img src="assets/media/tube-mixing/01/right-wrist.webp" alt="" width="640" height="480" loading="lazy"></div>
+                  <div><strong data-zh="三路相机图像">Three camera views</strong><small data-zh="「在试管内吹打」">“Mix in the tube”</small></div>
+                </div>
+              </div>
+              <div class="model-node model-core" data-flow-step="1"><strong>VLA</strong><small data-zh="预测">Predict</small></div>
+            </div>
+            <div class="model-outputs model-outputs-single" data-flow-step="2">
+              <div class="model-node model-result action-result">
+                <div><strong data-zh="动作片段">Actions</strong><small data-zh="双臂协作示意">Bimanual coordination</small></div>
+                <div class="action-visual">
+                  <canvas class="action-scene" data-action-scene width="300" height="160" role="img" aria-label="Two robot arms coordinating a tool and a container" data-zh-aria-label="左臂和右臂协同操作工具与容器的动画"></canvas>
+                  <div class="action-legend"><span data-zh="左臂">Left arm</span><span data-zh="右臂">Right arm</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="flow-return" data-flow-step="3" data-zh="执行后，根据新画面继续预测。">After execution, use fresh images for the next prediction.</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="insights" class="insight-section" aria-labelledby="insights-title">
+      <div class="shell section">
+        <div class="section-heading section-heading-compact">
+          <h2 id="insights-title" data-zh="工程经验">Engineering insights</h2>
+        </div>
+
+        <article class="insight">
+          <div class="insight-copy">
+            <h3 data-zh="筛查长时间静止">Screen out long pauses</h3>
+            <p data-zh="用滑动窗口统计各关节和手部通道的活动范围。一版数据整理剔除了连续静止超过 2 秒的整条示教。若在有效示教内删减空等帧，应保留按压等有意义的停顿。">Measure the range of motion in each joint and hand channel over a sliding window. One round of dataset preparation excluded demonstrations with more than two seconds of sustained inactivity. When trimming frames within a usable demonstration, preserve meaningful holds, such as a pause during a press.</p>
+          </div>
+          <div class="demo clean-demo" data-clean>
+            <div class="demo-top"><span class="demo-title" data-zh="静止帧裁剪示意">Illustrative frame trimming</span>
+              <button id="clean-toggle" class="toggle-button" type="button" aria-pressed="false" data-zh="裁剪长暂停">Trim long pause</button>
+            </div>
+            <div id="filmstrip" class="filmstrip" aria-hidden="true"></div>
+            <div class="demo-legend">
+              <span><i class="legend-key legend-motion"></i><span data-zh="动作与上下文">Motion and context</span></span>
+              <span><i class="legend-key legend-pause"></i><span data-zh="长暂停">Long pause</span></span>
+              <output id="clean-count" aria-live="polite">12 illustrative frames</output>
+            </div>
+          </div>
+        </article>
+
+        <article class="insight">
+          <div class="insight-copy">
+            <h3 data-zh="切分并均衡原子动作">Slice and balance skills</h3>
+            <p data-zh="将完整示教切成单次动作。在已核对的边界内，动作前后各保留 2–6 帧上下文，首轮、中间轮和末轮按 1∶1∶1 采样。训练和验证按原始示教划分，相邻片段归入同一集合。">Split demonstrations into complete single actions. Keep 2–6 frames of context on each side within verified boundaries, and balance first, middle and final repetitions 1:1:1. Split training and validation by the original demonstration so neighboring clips stay together.</p>
+          </div>
+          <div class="demo slicing-demo">
+            <div class="demo-top"><span class="demo-title" data-zh="单次动作切分">Anatomy of a clip</span>
+              <button id="context-toggle" class="toggle-button" type="button" aria-pressed="false" data-zh="显示上下文">Show context</button>
+            </div>
+            <div class="slice-window" role="group" aria-label="Camera stills showing the action and its surrounding context" data-zh-aria-label="显示动作核心和前后上下文的实拍帧">
+              <figure class="slice-group slice-context">
+                <div class="slice-frames">
+                  <img src="assets/media/illustration/frame-1.webp" width="192" height="144" loading="lazy" alt="">
+                  <img src="assets/media/illustration/frame-2.webp" width="192" height="144" loading="lazy" alt="">
+                </div>
+                <figcaption data-zh="动作前 2–6 帧">Before · 2–6</figcaption>
+              </figure>
+              <figure class="slice-group slice-core">
+                <div class="slice-frames">
+                  <img src="assets/media/illustration/frame-3.webp" width="192" height="144" loading="lazy" alt="">
+                  <img src="assets/media/illustration/frame-4.webp" width="192" height="144" loading="lazy" alt="">
+                  <img src="assets/media/illustration/frame-5.webp" width="192" height="144" loading="lazy" alt="">
+                  <img src="assets/media/illustration/frame-6.webp" width="192" height="144" loading="lazy" alt="">
+                </div>
+                <figcaption data-zh="动作核心">Action core</figcaption>
+              </figure>
+              <figure class="slice-group slice-context">
+                <div class="slice-frames">
+                  <img src="assets/media/illustration/frame-7.webp" width="192" height="144" loading="lazy" alt="">
+                  <img src="assets/media/illustration/frame-8.webp" width="192" height="144" loading="lazy" alt="">
+                </div>
+                <figcaption data-zh="动作后 2–6 帧">After · 2–6</figcaption>
+              </figure>
+            </div>
+            <div class="slice-balance">
+              <span data-zh="首轮">First</span><strong>1</strong>
+              <span data-zh="中间轮">Middle</span><strong>1</strong>
+              <span data-zh="末轮">Final</span><strong>1</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="insight">
+          <div class="insight-copy">
+            <h3 data-zh="约束最小 jerk 平滑">Smooth with minimum jerk</h3>
+            <p data-zh="对末端预测轨迹的三阶差分施加惩罚，抑制加速度的突变。固定实测起点和规划终点，限制中间点的偏移，手指与夹爪指令保持原值。">Penalize the third finite difference of the predicted end-effector path, a discrete measure of how quickly acceleration changes. Anchor the measured start and planned endpoint, limit deviations at intermediate points, and preserve the finger and gripper commands.</p>
+          </div>
+          <div class="demo smooth-demo">
+            <div class="demo-top"><span class="demo-title" data-zh="有界最小 jerk 轨迹">Bounded minimum-jerk trajectory</span>
+              <label class="range-label" for="smooth-level"><span data-zh="平滑强度">Strength</span> <input type="range" id="smooth-level" min="0" max="100" value="76"></label>
+            </div>
+            <canvas id="smooth-chart" role="img" aria-label="One-dimensional minimum-jerk example with fixed endpoints" data-zh-aria-label="固定起点和终点的一维最小 jerk 示意"></canvas>
+            <div class="demo-legend">
+              <span><i class="legend-key legend-pause"></i><span data-zh="原始预测">Raw prediction</span></span>
+              <span><i class="legend-key legend-motion"></i><span data-zh="平滑后">Smoothed</span></span>
+              <output id="smooth-value" for="smooth-level">76%</output>
+            </div>
+          </div>
+        </article>
+
+        <article class="insight">
+          <div class="insight-copy">
+            <h3 data-zh="用 FDM 前瞻减少等待">Predict ahead to reduce waiting</h3>
+            <p data-zh="当前动作片段执行时，FDM 以该片段的动作为条件，预测最近一次真实观测之后的视觉特征。策略用前瞻结果提前生成下一段动作，减少交接等待。收到实测画面后，用它校正后续预测所用的历史。">While the current chunk runs, the future dynamics module (FDM) uses those actions to forecast visual features beyond the latest observation. The policy uses that forecast to prepare the next chunk ahead of the handoff. Measured frames correct the history used by subsequent predictions.</p>
+          </div>
+          <div class="demo latency-demo" data-latency>
+            <div class="demo-top">
+              <span class="demo-title" data-zh="动作衔接时序示意">Illustrative action handoff</span>
+              <div class="segmented" role="group" aria-label="Inference scheduling mode" data-zh-aria-label="推理调度方式">
+                <button type="button" data-mode="serial" aria-pressed="false" data-zh="等待反馈">Wait for feedback</button>
+                <button type="button" data-mode="overlap" aria-pressed="true" data-zh="FDM 前瞻">Look ahead</button>
+              </div>
+            </div>
+            <div class="timing lookahead-timing" id="timing-chart" aria-label="Forecast visual features and prepare the next action during execution" data-zh-aria-label="执行期间预测未来视觉特征和下一段动作">
+              <div class="timing-row"><span data-zh="执行当前动作">Current action</span><div class="timing-track"><i class="timing-block executing"></i></div></div>
+              <div class="timing-row"><span class="timing-forecast-label" data-zh="FDM 预测">FDM forecast</span><div class="timing-track"><i class="timing-block forecast"></i></div></div>
+              <div class="timing-row"><span data-zh="预测下一段">Next prediction</span><div class="timing-track"><i class="timing-block predicting"></i></div></div>
+              <div class="timing-row"><span data-zh="相机反馈">Camera feedback</span><div class="timing-track"><i class="timing-block feedback"></i></div></div>
+              <div class="timing-row"><span data-zh="执行下一段">Next action</span><div class="timing-track"><i class="timing-block next"></i></div></div>
+              <div class="timing-axis"><span data-zh="开始">Start</span><span data-zh="时间">Time</span></div>
+            </div>
+            <p id="timing-status" class="demo-note" aria-live="polite"></p>
+          </div>
+        </article>
+
+        <article class="insight">
+          <div class="insight-copy">
+            <h3 data-zh="末端空间与关节空间的衔接">Connect end-effector and joint control</h3>
+            <p data-zh="EE 输出工具末端的目标位姿，Joint 输出目标关节角。逆运动学（IK）将末端目标转换为关节角，正运动学（FK）将关节角转换为末端位姿。在一致的坐标系和关节解分支中，同一段轨迹可用这两种方式表示。">An EE output specifies a target tool pose. A joint output specifies target joint angles. Inverse kinematics (IK) converts a tool pose to joint angles, and forward kinematics (FK) converts joint angles back to a tool pose. With a consistent coordinate frame and IK branch, both can represent the same trajectory.</p>
+          </div>
+          <div class="demo kinematics-demo">
+            <div class="demo-top">
+              <span class="demo-title" data-zh="同一轨迹，两种表示">One trajectory, two representations</span>
+              <div class="segmented" role="group" aria-label="Control space" data-zh-aria-label="控制空间">
+                <button type="button" data-kinematic-mode="ee" aria-pressed="true">EE + IK</button>
+                <button type="button" data-kinematic-mode="joint" aria-pressed="false">Joint + FK</button>
+              </div>
+            </div>
+            <canvas id="kinematic-scene" width="300" height="160" role="img" aria-label="A single motion path represented as both tool position and joint angles" data-zh-aria-label="同一轨迹的末端位置与关节角表示"></canvas>
+            <div class="kinematic-values">
+              <div class="kinematic-value is-source" data-kinematic-value="ee">
+                <strong data-zh="EE 末端位置">EE position</strong>
+                <span id="kinematic-ee"></span>
+              </div>
+              <span id="kinematic-conversion" class="kinematic-conversion">IK →</span>
+              <div class="kinematic-value" data-kinematic-value="joint">
+                <strong data-zh="Joint 关节角">Joint angles</strong>
+                <span id="kinematic-joint"></span>
+              </div>
+            </div>
+            <label class="kinematic-scrubber">
+              <span data-zh="执行进度">Progress</span>
+              <input id="kinematic-progress" type="range" min="0" max="100" value="36">
+            </label>
+            <p id="kinematic-note" class="demo-note" aria-live="polite"></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="recordings" class="shell section media-section" aria-labelledby="recordings-title">
+      <div class="section-heading section-heading-compact">
+        <h2 id="recordings-title" data-zh="逐轮评测录像">Trial footage</h2>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <aside class="skill-side" aria-label="Skill list" data-zh-aria-label="技能列表">
+          <p class="gallery-label"><span data-zh="技能">Skill</span> <span data-zh="成功 / 记录">Successful / recorded</span></p>
+          <div id="skill-list" class="skill-list" role="group" aria-label="Choose a skill" data-zh-aria-label="选择技能"></div>
+        </aside>
+
+        <div class="review">
+          <div class="review-heading">
+            <div>
+              <p id="clip-task" class="eyebrow"></p>
+              <h3 id="clip-title"></h3>
+              <p id="clip-description" class="clip-description"></p>
+            </div>
+            <div class="segmented review-filter" role="group" aria-label="Filter by trial outcome" data-zh-aria-label="按评测结果筛选">
+              <button type="button" data-result="all" aria-pressed="true" data-zh="全部">All</button>
+              <button type="button" data-result="success" aria-pressed="false" data-zh="成功">Passed</button>
+              <button type="button" data-result="failure" aria-pressed="false" data-zh="失败">Failed</button>
+            </div>
+          </div>
+          <div id="attempt-list" class="attempt-list" role="group" aria-label="Choose a trial" data-zh-aria-label="选择执行轮次"></div>
+          <p id="gallery-empty" class="empty-state" hidden data-zh="这项技能没有符合筛选条件的录像。">No trials in this skill match the filter.</p>
+
+          <div class="player" id="player">
+            <div class="player-top">
+              <div class="player-id">
+                <strong id="attempt-title"></strong>
+                <span id="attempt-result" class="outcome"></span>
+              </div>
+              <div class="segmented view-filter" role="group" aria-label="Choose camera views" data-zh-aria-label="选择相机视角">
+                <button type="button" data-view="all" aria-pressed="true" data-zh="三视角">All views</button>
+                <button type="button" data-view="head" aria-pressed="false" data-zh="头部">Head</button>
+                <button type="button" data-view="left-wrist" aria-pressed="false" data-zh="左腕">Left wrist</button>
+                <button type="button" data-view="right-wrist" aria-pressed="false" data-zh="右腕">Right wrist</button>
+              </div>
+            </div>
+            <div class="video-grid" id="video-grid"></div>
+            <div class="transport">
+              <button id="play-button" type="button" class="play-button" aria-label="Play">Play</button>
+              <input id="playhead" type="range" min="0" max="1" step="0.01" value="0" aria-label="Playback progress" data-zh-aria-label="播放进度">
+              <output id="timecode" for="playhead">0:00 / 0:00</output>
+            </div>
+            <p id="play-error" class="play-error" role="status" hidden></p>
+          </div>
+          <p id="attempt-note" class="attempt-note" hidden></p>
+          <div class="attempt-nav" aria-label="Change trial" data-zh-aria-label="切换轮次">
+            <button id="previous-attempt" class="button button-outline" type="button" data-zh="上一轮">Previous</button>
+            <button id="next-attempt" class="button button-outline" type="button" data-zh="下一轮">Next</button>
+          </div>
+          <noscript><p class="empty-state" data-zh="启用 JavaScript 后可浏览逐轮录像。">Enable JavaScript to browse the trial footage.</p></noscript>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer portfolio-footer">
+    <div class="shell">
+      <a class="portfolio-link" href="https://black-yt.github.io/" data-zh="作者主页">Author&rsquo;s homepage</a>
+    </div>
+  </footer>
+</body>
+</html>
